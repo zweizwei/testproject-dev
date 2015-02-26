@@ -1,0 +1,156 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul{
+    list-style: none;
+}
+
+a img {
+    border: none;
+}
+
+/* common styles
+---------------------------------------------------------------------------------- */
+body {
+    background-color: darkturquoise;
+    }
+
+.rightfloated{
+    float: right;
+    }
+
+.leftfloted{
+    float: left;
+    }
+
+
+
+.clr{
+    clear:both;
+    }
+
+/* /common styles
+---------------------------------------------------------------------------------- */
+
+
+
+/* header
+---------------------------------------------------------------------------------- */
+
+.header{
+    width: 940px;
+    min-height: 128px;
+    margin: 0 auto;
+    position:relative;
+    }
+
+    .header_logo{
+    position:absolute;
+    top:0;
+    left: -10px;
+    background-image:url("../img/traxo-logo.png") ;
+    width: 228px;
+    height: 107px;
+    }
+
+.header_slogan{
+    position: absolute;
+    top:30px;
+    left:240px;
+    color: white;
+    text-align: center;
+    font-family: Georgia, sans-serif;
+    font-style: italic;
+    font-size: 46px;
+    }
+
+.header_auth-buttons-wrapper{
+    position: absolute;
+    right: 0;
+    top: 36px;
+    min-width: 158px;
+    min-height: 28px;
+
+    }
+
+.button{
+    border-radius: 2px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    }
+
+.button.__signup {
+    padding: 6px 15px;
+    float: right;
+    margin-left: 10px;
+    background-color: #266497;
+    color: white;
+
+    }
+
+.button.__login{
+    padding: 6px 15px;
+    float: right;
+    background-color: #8fc3ee;
+    color: 225580;
+    }
+
+/* /header
+---------------------------------------------------------------------------------- */
+
+/* content
+---------------------------------------------------------------------------------- */
+.content{
+    margin-top: 44px;
+    width: 940px;
+    margin: 45px auto 0 auto;
+    min-height: 537px;
+    background-image: url("../img/wallet.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+
+.line{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin:5px 0 0 0 ;
+    }
+
+.line._line1{
+    padding-top: 32px;
+    }
+
+.feature{
+    display: inline-block;
+    width: 186px;
+    }
+
+.feature-text{
+    font-family: Myriad, sans-serif;
+    font-size: 18px;
+    color: #8c959b;
+    text-align: left;
+    }
+
+.arrow{
+    display: inline-block;
+    }
+
+/* /content
+---------------------------------------------------------------------------------- */
