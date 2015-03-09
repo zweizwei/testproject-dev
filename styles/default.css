@@ -47,8 +47,15 @@ a {
 ---------------------------------------------------------------------------------- */
 
 body {
-    background-color: violet!important;
-    }
+    position: relative;
+    background: -webkit-linear-gradient(#378fd9, #ffffff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#378fd9, #ffffff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#378fd9, #ffffff); /* For Firefox 3.6 to 15 */
+    background: url(../img/clouds.png) 0 50px,linear-gradient(#378fd9, #ffffff); /* Standard syntax */
+    -webkit-background-size: 100% 400px;
+    background-size: 100% 400px;
+    background-repeat: no-repeat;
+  }
 
 
 
