@@ -40,6 +40,7 @@ a {
         url('../fonts/Delius-regular/Delius-Regular-webfont.svg#webfont') format('svg');
     }
 
+
 /* /fonts
 ---------------------------------------------------------------------------------- */
 
@@ -48,13 +49,11 @@ a {
 
 body {
     position: relative;
-    background: -webkit-linear-gradient(#378fd9, #ffffff); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#378fd9, #ffffff); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#378fd9, #ffffff); /* For Firefox 3.6 to 15 */
-    background: url(../img/clouds.png) 0 50px,linear-gradient(#378fd9, #ffffff); /* Standard syntax */
-    -webkit-background-size: 100% 400px;
-    background-size: 100% 400px;
-    background-repeat: no-repeat;
+    background: url(../img/bg-gradient.png);
+    background-size: 1px 497px;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    font-size: 16px;
   }
 
 
@@ -104,41 +103,46 @@ body {
         text-align: center;
         font-family: Georgia, sans-serif;
         font-style: italic;
-        font-size: 46px;
+        font-size: 2.875em;
+        text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
     .header .auth-buttons{
         position: absolute;
         right: 0;
         top: 36px;
-        min-width: 158px;
-        min-height: 28px;
+        width: auto;
+        height: auto;
         }
 
 .auth-buttons{
     }
         .auth-buttons__button{
-            border-radius: 5px;
-
+            display: inline-block;
+            float: right;
+            margin-left: 0.3em;
             text-transform: uppercase;
             font-family: Helvetica, Arial, sans-serif;
             }
 
-        .auth-buttons__button .__login {
+        .auth-buttons__button .__login,
+        .auth-buttons__button .__sign-up{
             display: inline-block;
-            font-size: 12px;
+            font-size: 0.75em;
             padding: 0.75em 1.25em;
             float: right;
+            vertical-align: baseline;
             margin-left: 10px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;;
+            }
+
+        .auth-buttons__button .__login{
             background-color: #266497;
             color: white;
             }
-
-        .auth-buttons_button .__sign-up{
-            display: inline-block;
-            font-size: 12px;
-            padding: 0.75em 1.25em;
-            float: right;
+        .auth-buttons__button .__sign-up{
             background-color: #8fc3ee;
             color: #225580;
             }
@@ -196,10 +200,10 @@ body {
 
 .traxo-main-overview_item_text{
     font-family: Delius-Regular, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 1.125em;
     color: #58666e;
     }
-
+/*
 .traxo-main-overview_item_icon{
     background: url("../img/icons_small_sprite.png") 0 0 / 160px 100px no-repeat ;
     }
@@ -207,7 +211,7 @@ body {
 .traxo-main-overview_item_arrow {
     background: url("../img/arrows-sprite.png") 0 0 / 400px 300px no-repeat ;
     }
-
+*/
 
     .traxo-main-overview_item.__common-info{
         position: relative;
@@ -215,7 +219,12 @@ body {
         left:0;
         }
 
-        .traxo-main-overview_item *{
+        .traxo-main-overview_item.__common-info,
+        .traxo-main-overview_item.__travel-miles,
+        .traxo-main-overview_item.__travel-score,
+        .traxo-main-overview_item.__travel-tools,
+        .traxo-main-overview_item.__travel-history,
+        .traxo-main-overview_item.__travel-advice{
             position: absolute;
             }
 
@@ -236,15 +245,24 @@ body {
             .traxo-main-overview_item.__common-info .traxo-main-overview_item_icon{
                 width: 39px;
                 height: 39px;
-                background-position: -3px -6px;
+                background: url("../img/icons/small_icons/icon_small_info.svg");
+                background-repeat: no-repeat;
                 }
 
+            @media only screen and (min-device-pixel-ratio: 2)
+                {.traxo-main-overview_item.__common-info .traxo-main-overview_item_icon .is-not-retina{
+                background: url("../img/icons/small_icons/@2x_icon_small_info.png");
+                }
+                }
+
+
             .traxo-main-overview_item.__common-info .traxo-main-overview_item_arrow{
-                top: 34px;
+                top: 24px;
                 left: 195px;
-                width: 210px;
+                width: 200px;
                 height: 60px;
-                background-position: 0 0;
+                background: url("../img/icons/arrows/arrow_travel_info.svg");
+                background-repeat: no-repeat;
                 }
 
     .traxo-main-overview_item.__travel-tools{
@@ -254,9 +272,10 @@ body {
             .traxo-main-overview_item.__travel-tools .traxo-main-overview_item_icon{
 
                 top: -4px;
-                width: 42px;
+                width: 40px;
                 height: 44px;
-                background-position: -117px -46px;
+                background: url("../img/icons/small_icons/icon_small_travel_tools.svg");
+                background-repeat: no-repeat;
                 }
 
             .traxo-main-overview_item.__travel-tools .traxo-main-overview_item_arrow{
@@ -265,7 +284,8 @@ body {
                 left: 170px;
                 width: 110px;
                 height: 82px;
-                background-position: -240px 0;
+                background: url("../img/icons/arrows/arrow_travel_tools.svg");
+                background-repeat: no-repeat;
 
                 }
 
@@ -275,17 +295,19 @@ body {
         }
     .traxo-main-overview_item.__travel-miles .traxo-main-overview_item_icon{
         width: 42px;
-        height: 44px;
-        background-position: -118px 0
+        height: 42px;
+        background: url("../img/icons/small_icons/icon_small_plane.svg");
+        background-repeat: no-repeat;
         }
 
     .traxo-main-overview_item.__travel-miles .traxo-main-overview_item_arrow{
         position: absolute;
         top: 0;
         left: 195px;
-        width: 210px;
-        height: 82px;
-        background-position: 0 -126px;
+        width: 107px;
+        height: 46px;
+        background: url("../img/icons/arrows/arrow_travel_miles.svg");
+        background-repeat: no-repeat;
 
         }
 
@@ -295,17 +317,19 @@ body {
         }
     .traxo-main-overview_item.__travel-history .traxo-main-overview_item_icon{
         width: 42px;
-        height: 44px;
-        background-position: -60px -46px;
+        height: 42px;
+        background: url("../img/icons/small_icons/icon_small_travel_history.svg");
+        background-repeat: no-repeat;
         }
 
     .traxo-main-overview_item.__travel-history .traxo-main-overview_item_arrow{
         position: absolute;
         top: 0;
         left: 198px;
-        width: 210px;
-        height: 82px;
-        background-position: -232px -105px;
+        width: 111px;
+        height: 20px;
+        background: url("../img/icons/arrows/arrow_travel_history.svg");
+        background-repeat: no-repeat;
 
         }
 
@@ -318,16 +342,18 @@ body {
     .traxo-main-overview_item.__travel-score .traxo-main-overview_item_icon{
         width: 42px;
         height: 44px;
-        background-position: -60px 0;
+        background: url("../img/icons/small_icons/icon_small_perks.svg");
+        background-repeat: no-repeat;
         }
 
     .traxo-main-overview_item.__travel-score .traxo-main-overview_item_arrow{
         position: absolute;
         top: -53px;
         left: 166px;
-        width: 210px;
-        height: 82px;
-        background-position: 0 -250px;
+        width: 94px;
+        height: 64px;
+        background: url("../img/icons/arrows/arrow_travel_perks.svg");
+        background-repeat: no-repeat;
 
         }
 
@@ -339,16 +365,19 @@ body {
     .traxo-main-overview_item.__travel-advice .traxo-main-overview_item_icon{
         width: 42px;
         height: 44px;
-        background-position: 0 -48px;
+        background-position: 0 -48px;background: url("../img/icons/small_icons/icon_small_travel_advice.svg");
+        background-repeat: no-repeat;
+
         }
 
     .traxo-main-overview_item.__travel-advice .traxo-main-overview_item_arrow{
         position: absolute;
         top: -45px;
         left: 158px;
-        width: 210px;
-        height: 82px;
-        background-position: -232px -245px;
+        width: 103px;
+        height: 54px;
+        background: url("../img/icons/arrows/arrow_travel_advice.svg");
+        background-repeat: no-repeat;
 
         }
 
@@ -357,7 +386,7 @@ body {
 ---------------------------------------------------------------------------------- */
 
 
-/* search
+/* subscription
 ---------------------------------------------------------------------------------- */
 .easy-subcsription{
     width: 940px;
@@ -367,9 +396,10 @@ body {
     }
 
 .easy-subscription__form {
+    display: inline-block;
     margin: 0 auto;
-    width: 550px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
     text-align: center;
     }
 
@@ -379,30 +409,72 @@ body {
     width: 345px;
     height: 50px;
     border: solid 1px #9faab3;
-    border-radius: 2px;
     box-shadow: inset 0 2px 5px -2px #9faab3;
 
     }
+
+
+.easy-subscription__form__input::-webkit-input-placeholder,
+.easy-subscription__form__input::-moz-placeholder,
+.easy-subscription__form__input:-moz-placeholder,
+.easy-subscription__form__input:-ms-input-placeholder{
+    color:#cfcfcf;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;}
 
 .easy-subscription__form__input:focus{
     outline: 0;
     }
 
 .easy-subscription__form__submit{
-    box-sizing: border-box;
+    position: absolute;
     margin-left: 15px;
-    width: 169px;
-    height: 50px;
+    padding:0.57em 1.25em;
     background-color: #ed4908;
-    border: solid 1px #9faab3;
+    border: 1px solid #c67a53;
     border-radius: 3px;
     box-shadow: none;
-    font-size: 23px;
+    font-size: 1.45em;
     font-family: Helvetica, Arial, serif;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: none;
     color: #ffffff;
+    -webkit-box-shadow: inset -1px 28px 21px -7px rgba(255,255,255,0.22);
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
     }
+        .easy-subscription__form__submit:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 50%;
+            border-radius: inherit;
+            background: #ffffff;
+            opacity: 0.2;
+            }
+        .easy-subscription__form__submit:after{
+            content: '';
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            left:0;
+            display: block;
+            width: 100%;
+            height: 2%;
+            border: solid 2px #000;
+            opacity: 0.2;
+            border-top: none;
+            border-radius: inherit;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            }
+
+
+
 
 .easy-subcsription .easy-subscription__comment-text{
     margin: 0 auto;
@@ -411,41 +483,67 @@ body {
     text-align: center;
     font-family: Georgia, Arial, serif;
     font-style: italic;
-    font-size: 20px;
+    font-size: 1.25em;
     color: #666566;
     
     }
 
+/*.easy-subcsription form .submit-wrapper{*/
+    /*width: 200px;*/
+    /*height: 100px;*/
+    /*border: solid 1px red;*/
+    /*}*/
 
-
-/* /search
+/* /subscription
 ---------------------------------------------------------------------------------- */
 
-/* motivation-text
+/* section-text
 ---------------------------------------------------------------------------------- */
-.motivation-text{
+.section-text{
+
     width: 940px;
-    height: 50px;
+    height: 100%;
     margin: 50px auto;
 
     }
-
-        .motivation-text__pseudo-line{
-
-            }
-
-        .motivation-text__text{
-
+        .section-text__text{
+            position: relative;
+            text-align: center;
             background: #ffffff;
-            height: 50px;
             margin: 0 auto;
             font-family: Georgia, sans-serif;
             font-style: italic;
-            font-size: 40px;
-            text-align: center;
-            color: #292d2f;
-            background: url("../img/dot-line.png") no-repeat center;
+            font-size: 2.5em;
+
             }
+        .section-text__pseudo-line{
+            position: absolute;
+            top: 0.6em;
+            width: 96%;
+            margin-right: auto;
+            margin-left: auto;
+            height: 0;
+            border: 2px solid #dbdbdb;
+
+            }
+                .section-text__pseudo-line:before{
+                    content: ".";
+                    position: absolute;
+                    left: -0.6em;
+                    bottom: -0.3em;
+                    font-size: 1em;
+                    color: #dbdbdb;
+                    }
+                .section-text__pseudo-line:after{
+                    content: ".";
+                    position: absolute;
+                    right: -0.6em;
+                    bottom: -0.3em;
+                    font-size: 1em;
+                    color: #dbdbdb;
+                    }
+
+
 
 /* /line-text
 ---------------------------------------------------------------------------------- */
@@ -459,13 +557,17 @@ body {
     }
 
 .traxo-services__horisontal-set{
-    min-height: 100px;
     margin-bottom: 100px;
     overflow: hidden;
     }
+    .traxo-services__horisontal-set.__last{
+        margin-bottom: 0;
+        overflow: hidden;
+        }
 
 .traxo-services__item{
-    width: 470px;
+    vertical-align: top;
+    width: 50%;
     display: inline-block;
     position:relative;
     }
@@ -478,51 +580,59 @@ body {
     display: inline-block;
     margin-left: 28px;
     margin-right: 30px;
-    background: url("../img/icon-sprite-big.png") 0 0 / 211px 313px no-repeat ;
+    background-repeat: no-repeat;
+
     }
 
             .traxo-services__item.__info .traxo-services__item__icon{
                 height: 88px;
                 width: 88px;
-                background-position: 0 0;
+                background: url("../img/icons/big_icons/big_icon_travel_info.svg");
+                background-repeat: no-repeat;
                 }
             .traxo-services__item.__plane .traxo-services__item__icon{
                 height: 88px;
                 width: 88px;
-                background-position: -124px 0;
+                background: url("../img/icons/big_icons/big_icon_travel_miles.svg");
+                background-repeat: no-repeat;
                 }
             .traxo-services__item.__perks .traxo-services__item__icon{
                 height: 88px;
                 width: 88px;
-                background-position: 0 -108px;
+                background: url("../img/icons/big_icons/big_icon_travel_perks.svg");
+                background-repeat: no-repeat;
                 }
             .traxo-services__item.__simplify .traxo-services__item__icon{
                 height: 98px;
                 width: 88px;
-                background-position: -122px -98px;
+                background: url("../img/icons/big_icons/big_icon_simplify_compas.svg");
+                background-repeat: no-repeat;
                 }
             .traxo-services__item.__travel-story .traxo-services__item__icon{
                 height: 98px;
                 width: 92px;
-                background-position: 0 -224px;
+                background: url("../img/icons/big_icons/big_icon_travel_history.svg");
+                background-repeat: no-repeat;
                 }
             .traxo-services__item.__travel-advice .traxo-services__item__icon{
                 height: 98px;
                 width: 92px;
-                background-position: -122px -221px;
+                background: url("../img/icons/big_icons/big_icon_advice.svg");
+                background-repeat: no-repeat;
                 }
 
 
 .traxo-services__item__text{
     display: inline-block;
-    width: 278px;
+    vertical-align: top;
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    width: 278px;
     color: #a7a7a7
     }
 
 .traxo-services__item__text.__title{
-    font-size: 18px;
+    margin-bottom: 1em;
+    font-size: 1.125em;
     color: #6b9ae4;
     }
 
@@ -530,8 +640,8 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    height: 40px;
-    width: 26px;
+    height: 25px;
+    width: 25px;
     background: url("../img/plus_button.png") no-repeat;
 
     }
@@ -566,7 +676,7 @@ body {
             right: 0;
             width: 40px;
             height: 26px;
-            background: url("../img/plus-button-grey.png no-repeat");
+            background: url("../img/plus-button-grey.png") no-repeat;
             }
 
 
@@ -586,79 +696,94 @@ body {
 
     }
         .about-comments_comment .comment-text-wrapper{
-            width:346px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -173px;
+            margin-top: -29px;
             height: 156px;
-            position: relative;
-            top: 45%;
-            left:21%;
-            }
-        .about-comments_comment.__left-comment .comment-text-wrapper,
-        .about-comments_comment.__right-comment .comment-text-wrapper,{
-            top: 36%;
-            right: 13%;
+            width: 346px;
             }
 
 
         .about-comments_comment .comment-text-wrapper .comment-text{
             font-family: Georgia, sans-serif;
             font-style: italic;
-            font-size: 24px;
+            font-size: 1.5em;
             text-align: center;
-            color: #5b5b5b;
+
             }
         .about-comments_comment .comment-text-wrapper .comment-author{
-            position: relative;
-            top:20%;
+            position: absolute;
+            bottom:20%;
             left:21%;
             color: #bcbbbb;
             }
+
+        .about-comments_comment.__active .comment-text-wrapper .comment-author{
+            bottom: 10%;
+            }
+
         .comment-text-wrapper .comment-author .author-name{
             font-family: Arial, sans-serif;
             font-weight: 900;
-            font-size: 14px;
+            font-size: 0.875em;
             }
         .comment-text-wrapper .comment-author .source-name{
             font-family: Arial, sans-serif;
             font-weight: 100;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 0.875em;
             }
 
-.about-comments_comment.__center-comment {
-
-    width: 600px;
-    height: 340px;
-    position:relative;
-    top: -27%;
-    left: 50%;
-    margin: -157px 0 0 -285px;
-    z-index: 1000;
-    background: url("../img/cloud.png") no-repeat;
+.about-comments_comment .comment-image-cloud {
+    position: absolute;
+    width: 100%;
     }
 
-.about-comments_comment.__right-comment {
 
-    width: 480px;
-    height: 272px;
-    position:relative;
-    top: -513px;
-    left: 500px;
-    z-index: -1;
-    background: url("../img/cloud.png")  no-repeat;
-    background-size: 480px 272px;
+
+.about-comments_comment.__center-comment {
+    position:absolute;
+    top: 25%;
+    left: 25%;
+    z-index: 1;
     }
 
 .about-comments_comment.__left-comment {
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
 
+.about-comments_comment.__right-comment {
+    position:absolute;
+    top: 0;
+    right: 0;
+    }
+
+.about-comments_comment{
     width: 480px;
     height: 272px;
-    position:relative;
-    top: -58px;
-    right: 0;
-    z-index: -1;
-    background: url("../img/cloud.png") no-repeat;
-    background-size: 480px 272px;
+    color: #cdcdcd;
+    margin-left: 0;
     }
+
+.about-comments_comment:hover{
+    width: 600px;
+    height: 340px;
+    margin-left: -40px;
+    z-index: 2;
+    color: #5b5b5b;
+    -ms-transform: scale(1.2,1.2); /* IE 9 */
+    -webkit-transform: scale(1.2,1.2); /* Safari */
+    transform: scale(1.2,1.2);
+    -webkit-transition: -webkit-transform .2s;
+    -moz-transition: -moz-transform .2s;
+    transition: transform .2s;
+    }
+
+
 
 /* /partners-comments
 ---------------------------------------------------------------------------------- */
@@ -722,7 +847,8 @@ body {
         line-height: 1.4;
         }
     .footer-ul.__ul-item:first-child{
-        border-bottom: 1px solid ##e3e8ed;
+        display: inline-block;
+        border-bottom: 1px solid #e3e8ed;
         margin-bottom: 16px;
         }
 
@@ -758,10 +884,12 @@ body {
     }
         .copyrights .block-totop:before{
             content:"▲";
+            text-decoration: none;
+            text-underline: none;
             }
 
         .copyrights .block-totop a{
-            text-decoration: none;
+
             }
 
 /* /copyrights
