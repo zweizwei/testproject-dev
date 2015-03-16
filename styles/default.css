@@ -33,8 +33,8 @@ a {
 @font-face{
     font-family: 'Delius-Regular';
     font-weight: normal;
-    src: url('../fonts/Delius-regular/Delius-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-    src: url('../fonts/Delius-regular/Delius-Regular-webfont.eot');
+    src: url('../fonts/Delius-regular/Delius-Regular-webfont.eot?#iefix') format('embedded-opentype');
+    src: url('../fonts/Delius-regular/Delius-Regular-webfont.eot'),
         url('../fonts/Delius-regular/Delius-Regular-webfont.woff') format('woff'),
         url('../fonts/Delius-regular/Delius-Regular-webfont.ttf') format('truetype'),
         url('../fonts/Delius-regular/Delius-Regular-webfont.svg#webfont') format('svg');
@@ -497,50 +497,51 @@ body {
 /* /subscription
 ---------------------------------------------------------------------------------- */
 
-/* section-text
+/* section-title
 ---------------------------------------------------------------------------------- */
-.section-text{
+.section-title{
 
     width: 940px;
-    height: 100%;
+    position: relative;
     margin: 50px auto;
+    text-align: center;
+    vertical-align: top;
 
     }
-        .section-text__text{
+        .section-title_text{
             position: relative;
-            text-align: center;
             background: #ffffff;
             margin: 0 auto;
             font-family: Georgia, sans-serif;
             font-style: italic;
             font-size: 2.5em;
+            padding: 0 0.4em;
 
             }
-        .section-text__pseudo-line{
+        .section-title_pseudo-line{
             position: absolute;
-            top: 0.6em;
-            width: 96%;
-            margin-right: auto;
-            margin-left: auto;
+            top: 1.4em;
+            width: 940px;
             height: 0;
             border: 2px solid #dbdbdb;
 
             }
-                .section-text__pseudo-line:before{
-                    content: ".";
+                .section-title_pseudo-line:before,
+                .section-title_pseudo-line:after{
+                    content: "";
+                    width: 0.5em;
+                    height: 0.5em;
+                    border-radius: 100%;
                     position: absolute;
-                    left: -0.6em;
-                    bottom: -0.3em;
-                    font-size: 1em;
-                    color: #dbdbdb;
+                    top: -0.3em;
+                    background-color: #dbdbdb;
                     }
-                .section-text__pseudo-line:after{
-                    content: ".";
-                    position: absolute;
-                    right: -0.6em;
-                    bottom: -0.3em;
-                    font-size: 1em;
-                    color: #dbdbdb;
+                
+                .section-title_pseudo-line:before{
+                    left: -1.2em;;
+                    }
+                .section-title_pseudo-line:after{
+                    right: -1.2em;
                     }
 
 
@@ -707,7 +708,7 @@ body {
 
 
         .about-comments_comment .comment-text-wrapper .comment-text{
-            font-family: Georgia, sans-serif;
+            font-family: Georgia, Arial, sans-serif;
             font-style: italic;
             font-size: 1.5em;
             text-align: center;
