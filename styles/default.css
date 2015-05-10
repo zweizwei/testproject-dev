@@ -54,6 +54,8 @@ body {
     background-position: 0 0;
     background-repeat: repeat-x;
     font-size: 16px;
+    line-height: 1.2;
+    text-align: left;
   }
 
 
@@ -99,7 +101,7 @@ body {
     .header_slogan{
         margin: 0 auto;
         padding-top: 25px;
-        color: white;
+        color: #fff;
         text-align: center;
         font-family: Georgia, sans-serif;
         font-style: italic;
@@ -116,21 +118,22 @@ body {
         }
 
 .auth-buttons{
+    text-align: right;
     }
         .auth-buttons__button{
             display: inline-block;
-            float: right;
+
             margin-left: 0.3em;
             text-transform: uppercase;
             font-family: Helvetica, Arial, sans-serif;
             }
 
-        .auth-buttons__button .__login,
-        .auth-buttons__button .__sign-up{
+        .auth-buttons__button.__login,
+        .auth-buttons__button.__sign-up{
             display: inline-block;
             font-size: 0.75em;
-            padding: 0.75em 1.25em;
-            float: right;
+            padding: 0.75em 1.3em 0.45em 1.3em;
+
             vertical-align: baseline;
             margin-left: 10px;
             -webkit-border-radius: 5px;
@@ -138,11 +141,11 @@ body {
             border-radius: 5px;;
             }
 
-        .auth-buttons__button .__login{
+        .auth-buttons__button.__login{
             background-color: #266497;
-            color: white;
+            color: #fff;
             }
-        .auth-buttons__button .__sign-up{
+        .auth-buttons__button.__sign-up{
             background-color: #8fc3ee;
             color: #225580;
             }
@@ -172,34 +175,26 @@ body {
 
 .traxo-main-overview_item{
     display: inline-block;
-    position:absolute;
-    width: 470px;
-    height: 200px;
+    position:relative;
+
     }
 
     .traxo-main-overview_item_icon,
     .traxo-main-overview_item_text,
     .traxo-main-overview_item_arrow {
         position: absolute;
-        display: inline-block;
         }
 
-    .traxo-main-overview_item.__common-info .traxo-main-overview_item_text,
-    .traxo-main-overview_item.__travel-miles .traxo-main-overview_item_text,
-    .traxo-main-overview_item.__travel-score .traxo-main-overview_item_text{
-        text-align: left;
-        padding-right: 250px;
-        }
 
-    .traxo-main-overview_item.__travel-tools .traxo-main-overview_item_text,
-    .traxo-main-overview_item.__travel-history .traxo-main-overview_item_text,
-    .traxo-main-overview_item.__travel-advice .traxo-main-overview_item_text{
-        padding-left: 296px;
+    .traxo-main-overview_item.__travel-tools,
+    .traxo-main-overview_item.__travel-history,
+    .traxo-main-overview_item.__travel-advice{
         text-align: right;
         }
 
 .traxo-main-overview_item_text{
     font-family: Delius-Regular, Arial, sans-serif;
+    width: 190px;
     font-size: 1.125em;
     color: #58666e;
     }
@@ -414,31 +409,37 @@ body {
     }
 
 
-.easy-subscription__form__input::-webkit-input-placeholder,
-.easy-subscription__form__input::-moz-placeholder,
-.easy-subscription__form__input:-moz-placeholder,
-.easy-subscription__form__input:-ms-input-placeholder{
+.easy-subscription__form__input{
+    padding: 13px 16px;
+    width: 345px;
+    height: 50px;
+    box-sizing: border-box;
     color:#cfcfcf;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 20px;}
+    font-size: 19px;
+    font-style: italic;
+    }
 
 .easy-subscription__form__input:focus{
     outline: 0;
     }
 
 .easy-subscription__form__submit{
-    position: absolute;
+    position: relative;
+    width: 170px;
+    height: 50px;
+    box-sizing: border-box;
     margin-left: 15px;
-    padding:0.57em 1.25em;
-    background-color: #ed4908;
-    border: 1px solid #c67a53;
+    padding:0.57em;
+    background: linear-gradient(#ff6726, #f04c0b) ;
+    border: 1px solid #992f09;
     border-radius: 3px;
     box-shadow: none;
     font-size: 1.45em;
     font-family: Helvetica, Arial, serif;
     font-weight: 400;
     text-transform: none;
-    color: #ffffff;
+    color: #fff;
     -webkit-box-shadow: inset -1px 28px 21px -7px rgba(255,255,255,0.22);
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
     }
@@ -451,8 +452,8 @@ body {
             width: 100%;
             height: 50%;
             border-radius: inherit;
-            background: #ffffff;
-            opacity: 0.2;
+            background: linear-gradient(#ffa069, #ff7740);
+            
             }
         .easy-subscription__form__submit:after{
             content: '';
@@ -472,7 +473,9 @@ body {
             border-top-right-radius: 0;
             border-top-left-radius: 0;
             }
-
+            .get-started-text{
+                position: relative;
+                }
 
 
 
@@ -510,7 +513,7 @@ body {
     }
         .section-title_text{
             position: relative;
-            background: #ffffff;
+            background: #fff;
             margin: 0 auto;
             font-family: Georgia, sans-serif;
             font-style: italic;
